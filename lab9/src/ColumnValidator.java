@@ -28,4 +28,9 @@ public class ColumnValidator implements Validator{
     public ValidationResult validate(){
         return result;
     }
+
+    @Override
+    public void performValidation() {
+        validateColumns();
+    }
 }
