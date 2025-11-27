@@ -17,7 +17,7 @@ public class BoxValidator {
 
     public void validateBox(int boxIndex) {
         int[] box = board.getBox(boxIndex);
-        List<Duplicate> duplicates = Duplicate.checkForDuplicates(box, "BOX", boxIndex);
+        List<Duplicate> duplicates = DuplicateDetector.findDuplicates(box, "BOX", boxIndex);
 
         for (Duplicate dup : duplicates) {
             result.addDuplicate(dup);

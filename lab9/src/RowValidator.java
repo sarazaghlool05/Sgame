@@ -17,7 +17,7 @@ public class RowValidator {
 
     public void validateRow(int rowIndex) {
         int[] row = board.getRow(rowIndex);
-        List<Duplicate> duplicates = Duplicate.checkForDuplicates(row, "ROW", rowIndex);
+        List<Duplicate> duplicates = DuplicateDetector.findDuplicates(row, "ROW", rowIndex);
 
         for (Duplicate dup : duplicates) {
             result.addDuplicate(dup);

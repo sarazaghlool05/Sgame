@@ -10,18 +10,18 @@ public class SudokuBoard {
     }
 
     private void load(String filePath) throws IOException{
-        BufferedReader br = new BufferedReader(new FileReader(filePath));
-        String line;
-        int row = 0;
+        try(BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            int row = 0;
 
-        while((line = br.readLine())!=null && row<9){
-            String[] numbers = line.split(",");
-            for(int column = 0; column<9; column ++){
-                sudokuGrid[row][column] = Integer.parseInt(numbers[column].trim());
+            while ((line = br.readLine()) != null && row < 9) {
+                String[] numbers = line.split(",");
+                for (int column = 0; column < 9; column++) {
+                    sudokuGrid[row][column] = Integer.parseInt(numbers[column].trim());
+                }
+                row++;
             }
-            row++;
         }
-        br.close();
     }
 
     public int getCell(int row, int column){

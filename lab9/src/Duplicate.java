@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Duplicate {
+public class Duplicate implements Comparable<Duplicate>{
     private final String type;
     private final int index;
     private final int value;
@@ -12,6 +12,9 @@ public class Duplicate {
         this.index = index;
         this.value = value;
         this.positions = new ArrayList<>(positions);
+        for (int position : positions) {
+            this.positions.add(position + 1);
+        }
     }
 
     public String getType() {
@@ -33,5 +36,17 @@ public class Duplicate {
     @Override
     public String toString() {
         return String.format("%s %d, #%d, %s", type, index, value, positions);
+    }
+
+    @Override
+    public int compareTo(Duplicate other) {
+        int typeCompare = this.type.compareTo(other.type);
+        if (typeCompare != 0){
+            return typeCompare;
+        }
+        if (this.index != other.index) {
+            return Integer.compare(this.index, other.index);
+        }
+        return Integer.compare(this.value, other.value);
     }
 }

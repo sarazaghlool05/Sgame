@@ -17,7 +17,7 @@ public class ColumnValidator {
 
     public void validateColumn(int columnIndex) {
         int[] column = board.getColumn(columnIndex);
-        List<Duplicate> duplicates = Duplicate.checkForDuplicates(column, "COL", columnIndex);
+        List<Duplicate> duplicates = DuplicateDetector.findDuplicates(column, "COL", columnIndex);
 
         for (Duplicate dup : duplicates) {
             result.addDuplicate(dup);
