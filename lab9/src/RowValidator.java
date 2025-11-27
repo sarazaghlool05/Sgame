@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 
 public class RowValidator implements Validator{
@@ -7,21 +6,21 @@ public class RowValidator implements Validator{
 
     public RowValidator(SudokuBoard board) {
         this.board = board;
-        result = new ValidationResult();
+        this.result = new ValidationResult();
     }
 
-    public List<Duplicate> validateRow(int rowIndex) {
-        int[] row = board.getRow(rowIndex);
-        return DuplicateDetector.findDuplicates(row, "ROW", rowIndex);
-    }
-
-    public void validateAllRows() {
-        List<Duplicate> allDuplicates = new ArrayList<>();
+    public void validateRows() {
         for (int i = 0; i < 9; i++) {
-            allDuplicates.addAll(validateRow(i));
-            for(int j = 0; j < validateRow(i).size(); j++){
-                result.addDuplicate(validateRow(i).get(j));
-            }
+            validateRow(i);
+        }
+    }
+
+    public void validateRow(int rowIndex) {
+        int[] row = board.getRow(rowIndex);
+        List<Duplicate> duplicates = DuplicateDetector.findDuplicates(row, "ROW", rowIndex);
+
+        for (Duplicate dup : duplicates) {
+            result.addDuplicate(dup);
         }
     }
 

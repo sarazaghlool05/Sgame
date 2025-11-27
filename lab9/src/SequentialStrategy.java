@@ -12,15 +12,15 @@ public class SequentialStrategy implements VerificationStrategy{
     @Override
     public boolean verify(SudokuBoard board){
         RowValidator rowValidator = new RowValidator(board);
-        rowValidator.validateAllRows();
+        rowValidator.validateRows();
         ValidationResult rowResult = rowValidator.validate();
 
         ColumnValidator columnValidator = new ColumnValidator(board);
-        columnValidator.validateAllColumns();
+        columnValidator.validateColumns();
         ValidationResult colResult = columnValidator.validate();
 
         BoxValidator boxValidator = new BoxValidator(board);
-        boxValidator.validateAllBoxes();
+        boxValidator.validateBoxes();
         ValidationResult boxResult = boxValidator.validate();
 
         if(rowResult.isValid() && colResult.isValid() && boxResult.isValid()){
