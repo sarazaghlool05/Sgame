@@ -17,7 +17,7 @@ public class SodukoVerifier {
             ValidationResult result = new ValidationResult();
             VerificationStrategy strategy = StrategyFactory.createStrategy(board,mode);
             strategy.verify(board);
-            ValidationResult.printResult(result);
+            ResultPrinting.printResult(result);
 
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
