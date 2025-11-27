@@ -1,5 +1,4 @@
 public class VerificationTask implements Runnable {
-
     private final Validator validator;
 
     public VerificationTask(Validator validator) {
@@ -8,6 +7,6 @@ public class VerificationTask implements Runnable {
 
     @Override
     public void run() {
-        validator.validate();
+        validator.performValidation();
     }
 }

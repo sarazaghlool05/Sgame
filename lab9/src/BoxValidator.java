@@ -28,4 +28,9 @@ public class BoxValidator implements Validator{
     public ValidationResult validate(){
         return result;
     }
+
+    @Override
+    public void performValidation() {
+        validateBoxes();
+    }
 }
