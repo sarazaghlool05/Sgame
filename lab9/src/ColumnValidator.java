@@ -1,12 +1,12 @@
 import java.util.List;
 
-public class ColumnValidator {
+public class ColumnValidator implements Validator{
     private SudokuBoard board;
     private ValidationResult result;
 
-    public ColumnValidator(SudokuBoard board, ValidationResult result) {
+    public ColumnValidator(SudokuBoard board) {
         this.board = board;
-        this.result = result;
+        this.result = new ValidationResult();
     }
 
     public void validateColumns() {
@@ -22,5 +22,10 @@ public class ColumnValidator {
         for (Duplicate dup : duplicates) {
             result.addDuplicate(dup);
         }
+    }
+
+    @Override
+    public ValidationResult validate(){
+        return result;
     }
 }
