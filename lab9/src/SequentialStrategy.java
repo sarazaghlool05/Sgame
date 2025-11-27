@@ -1,11 +1,9 @@
 import java.util.List;
 
 public class SequentialStrategy implements VerificationStrategy{
-    private final SudokuBoard board;
     private ValidationResult result;
 
-    public SequentialStrategy(SudokuBoard board){
-        this.board = board;
+    public SequentialStrategy(){
         result = new ValidationResult();
     }
 
@@ -23,11 +21,16 @@ public class SequentialStrategy implements VerificationStrategy{
         boxValidator.validateBoxes();
         ValidationResult boxResult = boxValidator.validate();
 
-        if(rowResult.isValid() && colResult.isValid() && boxResult.isValid()){
-            result.setIsValid(true);
+        for(int i = 0; i < rowResult.getDuplicates().size(); i++){
+            result.addDuplicate(rowResult.getDuplicates().get(i));
         }
-        else{
-            result.setIsValid(false);
+
+        for(int i = 0; i < colResult.getDuplicates().size(); i++){
+            result.addDuplicate(colResult.getDuplicates().get(i));
+        }
+
+        for(int i = 0; i < boxResult.getDuplicates().size(); i++){
+            result.addDuplicate(boxResult.getDuplicates().get(i));
         }
 
         return result.isValid();
