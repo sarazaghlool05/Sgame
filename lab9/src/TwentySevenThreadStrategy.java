@@ -1,4 +1,3 @@
-import javax.print.DocFlavor;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,22 +10,23 @@ public class TwentySevenThreadStrategy implements VerificationStrategy{
     }
     public boolean verify(SudokuBoard board){
         List<Thread> threads= new ArrayList<>();
+        List<Validator> validators=new ArrayList<>();
         for(int i=0;i<9;i++){
             RowValidator ValidatedRow= new RowValidator(board);
-            ValidatedRow.validateRow(i);
-            Thread R=new Thread(new VerificationTask(ValidatedRow));
+            validators.add(ValidatedRow);
+            Thread R=new Thread(new VerificationTask(ValidatedRow,i));
             threads.add(R);
         }
         for(int i=0;i<9;i++){
             ColumnValidator ValidatedColumn=new ColumnValidator(board);
-            ValidatedColumn.validateColumn(i);
-            Thread C=new Thread(new VerificationTask(ValidatedColumn));
+            validators.add(ValidatedColumn);
+            Thread C=new Thread(new VerificationTask(ValidatedColumn,i));
             threads.add(C);
         }
         for(int i=0;i<9;i++){
             BoxValidator ValidatedBox=new BoxValidator(board);
-            ValidatedBox.validateBox(i);
-            Thread B=new Thread(new VerificationTask(ValidatedBox));
+            validators.add(ValidatedBox);
+            Thread B=new Thread(new VerificationTask(ValidatedBox,i));
             threads.add(B);
         }
         for(int i =0; i<threads.size();i++){
@@ -42,11 +42,16 @@ public class TwentySevenThreadStrategy implements VerificationStrategy{
             }
 
         }
-        ValidationResult Solution=FinalAnswer.combined();
-        return Solution.isValid();
+        for(int i=0 ; i<validators.size();i++){
+            Validator v=validators.get(i);
+            FinalAnswer.addDuplicates(v.validate().getDuplicates());
+
+        }
+        return FinalAnswer.combined().isValid();
     }
     @Override
     public List<Duplicate> returnDuplicates(){
       return FinalAnswer.combined().getSortedDuplicates();
     }
+
 }
