@@ -11,7 +11,7 @@ public class Duplicate implements Comparable<Duplicate>{
         this.type = type;
         this.index = index;
         this.value = value;
-        this.positions = new ArrayList<>(positions);
+        this.positions = new ArrayList<>();
         for (int position : positions) {
             this.positions.add(position + 1);
         }
