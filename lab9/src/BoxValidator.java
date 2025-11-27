@@ -33,4 +33,9 @@ public class BoxValidator implements Validator{
     public void performValidation() {
         validateBoxes();
     }
+
+    @Override
+    public void performValidation(int index) {
+        validateBox(index);  // ONE box
+    }
 }
