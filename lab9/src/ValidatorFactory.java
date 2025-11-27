@@ -1,4 +1,4 @@
-public class ValidatorFactory {
+/*public class ValidatorFactory {
     public static Validator createValidator(SudokuBoard board, int mode) {
         switch (mode) {
             case 0: return new ZeroThreadStrategy(board);
@@ -7,4 +7,4 @@ public class ValidatorFactory {
             default: throw new IllegalArgumentException("Invalid mode");
         }
     }
-}
+}*/
