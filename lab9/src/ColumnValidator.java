@@ -1,11 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class ColumnValidator {
+public class ColumnValidator implements Validator{
     private SudokuBoard board;
+    private ValidationResult result;
 
     public ColumnValidator(SudokuBoard board) {
         this.board = board;
+        result = new ValidationResult();
     }
 
     public List<Duplicate> validateColumn(int columnIndex) {
@@ -13,11 +15,18 @@ public class ColumnValidator {
         return DuplicateDetector.findDuplicates(column, "COL", columnIndex);
     }
 
-    public List<Duplicate> validateAllColumns() {
+    public void validateAllColumns() {
         List<Duplicate> allDuplicates = new ArrayList<>();
         for(int i = 0; i < 9; i++){
             allDuplicates.addAll(validateColumn(i));
+            for(int j = 0; j < validateColumn(i).size(); j++){
+                result.addDuplicate(validateColumn(i).get(j));
+            }
         }
-        return  allDuplicates;
+    }
+
+    @Override
+    public ValidationResult validate(){
+        return result;
     }
 }

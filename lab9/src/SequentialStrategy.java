@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class SequentialStrategy implements VerificationStrategy, Validator{
+public class SequentialStrategy implements VerificationStrategy{
     private final SudokuBoard board;
     private ValidationResult result;
 
@@ -12,22 +12,24 @@ public class SequentialStrategy implements VerificationStrategy, Validator{
     @Override
     public boolean verify(SudokuBoard board){
         RowValidator rowValidator = new RowValidator(board);
-        List<Duplicate> rowDuplicates = rowValidator.validateAllRows();
-        for(int i = 0; i < rowDuplicates.size(); i++){
-            result.addDuplicate(rowDuplicates.get(i));
-        }
+        rowValidator.validateAllRows();
+        ValidationResult rowResult = rowValidator.validate();
 
         ColumnValidator columnValidator = new ColumnValidator(board);
-        List<Duplicate> columnDuplicates = columnValidator.validateAllColumns();
-        for(int i = 0; i < columnDuplicates.size(); i++){
-            result.addDuplicate(columnDuplicates.get(i));
-        }
+        columnValidator.validateAllColumns();
+        ValidationResult colResult = columnValidator.validate();
 
         BoxValidator boxValidator = new BoxValidator(board);
-        List<Duplicate> boxDuplicates = boxValidator.validateAllBoxes();
-        for(int i = 0; i < boxDuplicates.size(); i++){
-            result.addDuplicate(boxDuplicates.get(i));
+        boxValidator.validateAllBoxes();
+        ValidationResult boxResult = boxValidator.validate();
+
+        if(rowResult.isValid() && colResult.isValid() && boxResult.isValid()){
+            result.setIsValid(true);
         }
+        else{
+            result.setIsValid(false);
+        }
+
         return result.isValid();
     }
 
@@ -36,8 +38,4 @@ public class SequentialStrategy implements VerificationStrategy, Validator{
         return result.getSortedDuplicates();
     }
 
-    @Override
-    public ValidationResult validate(){
-        return result;
-    }
 }
