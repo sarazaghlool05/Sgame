@@ -1,12 +1,12 @@
 import java.util.List;
 
-public class BoxValidator {
+public class BoxValidator implements Validator{
     private SudokuBoard board;
     private ValidationResult result;
 
-    public BoxValidator(SudokuBoard board, ValidationResult result) {
+    public BoxValidator(SudokuBoard board) {
         this.board = board;
-        this.result = result;
+        this.result = new ValidationResult();
     }
 
     public void validateBoxes() {
@@ -22,5 +22,10 @@ public class BoxValidator {
         for (Duplicate dup : duplicates) {
             result.addDuplicate(dup);
         }
+    }
+
+    @Override
+    public ValidationResult validate(){
+        return result;
     }
 }

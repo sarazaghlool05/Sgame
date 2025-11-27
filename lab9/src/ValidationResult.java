@@ -9,6 +9,10 @@ public class ValidationResult {
         return isValid;
     }
 
+    public synchronized void setIsValid(boolean valid){
+        this.isValid = valid;
+    }
+
     public synchronized void addDuplicate(Duplicate duplicate){
         this.duplicates.add(duplicate);
         this.isValid = false;
