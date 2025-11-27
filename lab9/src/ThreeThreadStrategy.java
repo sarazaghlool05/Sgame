@@ -1,22 +1,18 @@
 import java.util.List;
 
 public class ThreeThreadStrategy implements VerificationStrategy{
-    private  SudokuBoard board;
-    private RowValidator rowValidator;
-    private ColumnValidator columnValidator;
-    private  BoxValidator boxValidator;
     private  ValidationResult result;
 
-    public  ThreeThreadStrategy(SudokuBoard board){
-        this.board = board;
-        rowValidator = new RowValidator(board);
-        columnValidator = new ColumnValidator(board);
-        boxValidator = new BoxValidator(board);
+    public  ThreeThreadStrategy(){
         result = new ValidationResult();
     }
 
     @Override
-    public synchronized boolean verify(SudokuBoard board){
+    public boolean verify(SudokuBoard board){
+        RowValidator rowValidator = new RowValidator(board);
+        ColumnValidator columnValidator = new ColumnValidator(board);
+        BoxValidator boxValidator = new BoxValidator(board);
+
         VerificationTask rowTask = new VerificationTask(rowValidator);
         VerificationTask colTask = new VerificationTask(columnValidator);
         VerificationTask boxTask = new VerificationTask(boxValidator);
@@ -25,14 +21,25 @@ public class ThreeThreadStrategy implements VerificationStrategy{
         Thread col = new Thread(colTask);
         Thread box = new Thread(boxTask);
 
-        row.setPriority(10);
-        col.setPriority(5);
-        box.setPriority(1);
-
         row.start();
         col.start();
         box.start();
 
+        try{
+            row.join();
+            col.join();
+            box.join();
+        }catch(InterruptedException e){
+            System.out.println("error in threading");
+        }
+
+        ValidationResult rowResult = rowValidator.validate();
+        ValidationResult colResult = columnValidator.validate();
+        ValidationResult boxResult = boxValidator.validate();
+
+        mergeResult(rowResult);
+        mergeResult(colResult);
+        mergeResult(boxResult);
 
         return result.isValid();
     }
@@ -40,5 +47,11 @@ public class ThreeThreadStrategy implements VerificationStrategy{
     @Override
     public List<Duplicate> returnDuplicates(){
         return result.getSortedDuplicates();
+    }
+
+    private void mergeResult(ValidationResult source) {
+        for (Duplicate dup : source.getDuplicates()) {
+            result.addDuplicate(dup);
+        }
     }
 }
