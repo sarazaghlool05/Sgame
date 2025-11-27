@@ -15,9 +15,9 @@ public class SudokuBoard {
         int row = 0;
 
         while((line = br.readLine())!=null && row<9){
-            String[] token = line.split(",");
+            String[] numbers = line.split(",");
             for(int column = 0; column<9; column ++){
-                sudokuGrid[row][column] = Integer.parseInt(token[column].trim());
+                sudokuGrid[row][column] = Integer.parseInt(numbers[column].trim());
             }
             row++;
         }
@@ -32,12 +32,12 @@ public class SudokuBoard {
         return sudokuGrid[row];
     }
 
-    public int[] getColumn(int column){
-        int[] columnArray = new int[9];
+    public int[] getColumn(int columnIndex){
+        int[] column = new int[9];
         for(int row=0; row<9; row++){
-            columnArray[row] = sudokuGrid[row][column];
+            column[row] = sudokuGrid[row][columnIndex];
         }
-        return columnArray;
+        return column;
     }
 
     public int[] getBox(int boxIndex) {
