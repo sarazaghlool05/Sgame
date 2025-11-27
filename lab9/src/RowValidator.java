@@ -1,26 +1,23 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class RowValidator {
     private SudokuBoard board;
-    private ValidationResult result;
 
-    public RowValidator(SudokuBoard board, ValidationResult result) {
+    public RowValidator(SudokuBoard board) {
         this.board = board;
-        this.result = result;
     }
 
-    public void validateRows() {
-        for (int i = 0; i < 9; i++) {
-            validateRow(i);
-        }
-    }
-
-    public void validateRow(int rowIndex) {
+    public List<Duplicate> validateRow(int rowIndex) {
         int[] row = board.getRow(rowIndex);
-        List<Duplicate> duplicates = DuplicateDetector.findDuplicates(row, "ROW", rowIndex);
+        return DuplicateDetector.findDuplicates(row, "ROW", rowIndex);
+    }
 
-        for (Duplicate dup : duplicates) {
-            result.addDuplicate(dup);
+    public List<Duplicate> validateAllRows() {
+        List<Duplicate> allDuplicates = new ArrayList<>();
+        for (int i = 0; i < 9; i++) {
+            allDuplicates.addAll(validateRow(i));
         }
+        return allDuplicates;
     }
 }

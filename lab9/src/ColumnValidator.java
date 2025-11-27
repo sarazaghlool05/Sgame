@@ -1,26 +1,23 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class ColumnValidator {
     private SudokuBoard board;
-    private ValidationResult result;
 
-    public ColumnValidator(SudokuBoard board, ValidationResult result) {
+    public ColumnValidator(SudokuBoard board) {
         this.board = board;
-        this.result = result;
     }
 
-    public void validateColumns() {
-        for (int i = 0; i < 9; i++) {
-            validateColumn(i);
-        }
-    }
-
-    public void validateColumn(int columnIndex) {
+    public List<Duplicate> validateColumn(int columnIndex) {
         int[] column = board.getColumn(columnIndex);
-        List<Duplicate> duplicates = DuplicateDetector.findDuplicates(column, "COL", columnIndex);
+        return DuplicateDetector.findDuplicates(column, "COL", columnIndex);
+    }
 
-        for (Duplicate dup : duplicates) {
-            result.addDuplicate(dup);
+    public List<Duplicate> validateAllColumns() {
+        List<Duplicate> allDuplicates = new ArrayList<>();
+        for(int i = 0; i < 9; i++){
+            allDuplicates.addAll(validateColumn(i));
         }
+        return  allDuplicates;
     }
 }
