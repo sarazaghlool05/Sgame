@@ -14,9 +14,9 @@ public class SodukoVerifier {
         try {
 
             SudokuBoard board = new SudokuBoard(filePath);
-            ValidationResult result = new ValidationResult();
             VerificationStrategy strategy = StrategyFactory.createStrategy(board,mode);
             strategy.verify(board);
+            ValidationResult result = new ValidationResult();
             ResultPrinting.printResult(result);
 
         } catch (Exception e) {
