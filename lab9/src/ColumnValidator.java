@@ -33,4 +33,9 @@ public class ColumnValidator implements Validator{
     public void performValidation() {
         validateColumns();
     }
+
+    @Override
+    public void performValidation(int index) {
+        validateColumn(index);  // ONE column
+    }
 }

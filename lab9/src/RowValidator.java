@@ -33,4 +33,9 @@ public class RowValidator implements Validator{
     public void performValidation() {
         validateRows();
     }
+
+    @Override
+    public void performValidation(int index) {
+        validateRow(index);
+    }
 }
