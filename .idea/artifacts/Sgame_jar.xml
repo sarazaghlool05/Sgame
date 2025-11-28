@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Sgame:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Sgame_jar</output-path>
+    <root id="archive" name="Sgame.jar">
+      <element id="module-output" name="Sgame" />
+    </root>
+  </artifact>
+</component>

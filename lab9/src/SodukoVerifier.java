@@ -19,6 +19,7 @@ public class SodukoVerifier {
             for (Duplicate dup : strategy.returnDuplicates()) {
                 result.addDuplicate(dup);
             }
+
             ResultPrinting.printResult(result);
 
         } catch (Exception e) {
