@@ -9,9 +9,7 @@ public class ResultPrinting {
                 List<Duplicate> duplicates = result.getSortedDuplicates();
                 for (Duplicate d : duplicates) {
                     System.out.println(
-                            d.getType() + " " +
-                                    (d.getIndex() + 1) + ", #" + d.getValue() +
-                                    ", positions=" + d.getPositions()
+                            d.getType() + " " + d.getIndex() + ", #" + d.getValue() + ", positions=" + d.getPositions()
                     );
                 }
             }

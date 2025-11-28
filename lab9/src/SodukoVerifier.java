@@ -5,18 +5,20 @@ public class SodukoVerifier {
             return;
         }
         String filePath = args[0];
-       String mode = args[1];
+        String mode = args[1];
 
-        if (!(mode.equals("0")) && !mode.equals("3") && !mode.equals("27")) {
+        if (!mode.equals("0") && !mode.equals("3") && !mode.equals("27")) {
             System.out.println("Invalid mode. Choose 0, 3, or 27.");
             return;
         }
         try {
-
             SudokuBoard board = new SudokuBoard(filePath);
-            ValidationResult result = new ValidationResult();
             VerificationStrategy strategy = StrategyFactory.createStrategy(board,mode);
             strategy.verify(board);
+            ValidationResult result = new ValidationResult();
+            for (Duplicate dup : strategy.returnDuplicates()) {
+                result.addDuplicate(dup);
+            }
             ResultPrinting.printResult(result);
 
         } catch (Exception e) {
