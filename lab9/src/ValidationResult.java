@@ -18,6 +18,12 @@ public class ValidationResult {
         return new ArrayList<>(duplicates);
     }
 
+    public synchronized void merge(ValidationResult other) {
+        for (Duplicate dup : other.getDuplicates()) {
+            addDuplicate(dup);
+        }
+    }
+
     public synchronized List<Duplicate> getSortedDuplicates() {
         List<Duplicate> sorted = new ArrayList<>(duplicates);
 
