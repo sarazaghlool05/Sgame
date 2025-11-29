@@ -1,0 +1,221 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.8 Chrome/140.0.7339.240 Electron/38.4.0 Safari/537.36" version="28.2.8">
+  <diagram name="Page-1" id="uIh_5a-pTeVXgQOJWOCL">
+    <mxGraphModel dx="2205" dy="1505" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-1" value="main()" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="130" height="2060" as="geometry" />
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-2" value="SodukoVerfier" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="260" y="40" width="100" height="2060" as="geometry" />
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-3" value="BoxValidator" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="1200" y="40" width="100" height="2040" as="geometry" />
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-4" value="SudokuBoard" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="410" y="40" width="100" height="2060" as="geometry" />
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-5" value="StrategyFactory" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="570" y="40" width="100" height="2060" as="geometry" />
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-6" value="RowValidator" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="890" y="40" width="100" height="2040" as="geometry" />
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-7" value="ColumnValidator" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="1040" y="40" width="100" height="2040" as="geometry" />
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-8" value="ZeroThreadStrategy" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="740" y="40" width="110" height="2050" as="geometry" />
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-22" value="&lt;font style=&quot;font-size: 7px;&quot;&gt;validate args&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1" source="zZXE5hGUNT9eiSbAK70r-1" target="zZXE5hGUNT9eiSbAK70r-1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="120" y="130" as="sourcePoint" />
+            <mxPoint x="200" y="160" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="160" y="130" />
+              <mxPoint x="160" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-23" value="new SodukoVerifier()" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0.513;entryY=0.071;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="zZXE5hGUNT9eiSbAK70r-1" target="zZXE5hGUNT9eiSbAK70r-2">
+          <mxGeometry x="-0.028" y="-1" width="80" relative="1" as="geometry">
+            <mxPoint x="120" y="190" as="sourcePoint" />
+            <mxPoint x="300" y="185" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-24" value="validate(filePath,&quot;0&quot;)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1" source="zZXE5hGUNT9eiSbAK70r-1" target="zZXE5hGUNT9eiSbAK70r-2">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="130" y="235" as="sourcePoint" />
+            <mxPoint x="200" y="240" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="240" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-25" value="new SudokuBoard (filePath)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1" target="zZXE5hGUNT9eiSbAK70r-4">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="310" y="230" as="sourcePoint" />
+            <mxPoint x="390" y="230" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="350" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-26" value="load(filePath)" style="html=1;verticalAlign=bottom;endArrow=block;curved=1;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=0.497;entryY=0.12;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="zZXE5hGUNT9eiSbAK70r-4">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="460" y="250" as="sourcePoint" />
+            <mxPoint x="470" y="280" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="460" y="240" />
+              <mxPoint x="500" y="240" />
+              <mxPoint x="500" y="284" />
+              <mxPoint x="470" y="284" />
+              <mxPoint x="470" y="287" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-28" value="board" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1" target="zZXE5hGUNT9eiSbAK70r-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="300" as="sourcePoint" />
+            <mxPoint x="380" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-29" value="createStrategy(board,&quot;0&quot;)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1" target="zZXE5hGUNT9eiSbAK70r-5">
+          <mxGeometry x="-0.5477" y="10" width="80" relative="1" as="geometry">
+            <mxPoint x="310" y="340" as="sourcePoint" />
+            <mxPoint x="390" y="340" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="350" y="340" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-32" value="new ZeroThreadStrategy()" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1" target="zZXE5hGUNT9eiSbAK70r-8">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="620" y="360" as="sourcePoint" />
+            <mxPoint x="700" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-33" value="strategy" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1" target="zZXE5hGUNT9eiSbAK70r-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="790" y="390" as="sourcePoint" />
+            <mxPoint x="710" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-34" value="strategy" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1" target="zZXE5hGUNT9eiSbAK70r-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="620" y="420" as="sourcePoint" />
+            <mxPoint x="540" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-35" value="verify(board)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1" target="zZXE5hGUNT9eiSbAK70r-8">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="310" y="480" as="sourcePoint" />
+            <mxPoint x="390" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-36" value="new rowValidator(board)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0.488;entryY=0.245;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="794.785714285714" y="520" as="sourcePoint" />
+            <mxPoint x="938.8" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-37" value="new columnValidator(board)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.491;exitY=0.34;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="794.0099999999998" y="560.0000000000002" as="sourcePoint" />
+            <mxPoint x="1089.5" y="560.0000000000002" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-38" value="new boxValidator(board)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.53;exitY=0.345;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="798.2999999999997" y="600" as="sourcePoint" />
+            <mxPoint x="1249.5" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-39" value="frame" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;" vertex="1" parent="1">
+          <mxGeometry x="770" y="630" width="510" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-40" value="new rowValidator(board)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0.5;entryY=0.319;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="zZXE5hGUNT9eiSbAK70r-8" target="zZXE5hGUNT9eiSbAK70r-6">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="800" y="690" as="sourcePoint" />
+            <mxPoint x="935.11" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-41" value="new columnValidator(board)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1" source="zZXE5hGUNT9eiSbAK70r-8">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="799.9953846153848" y="720" as="sourcePoint" />
+            <mxPoint x="1090" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-42" value="new boxValidator(board)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1" target="zZXE5hGUNT9eiSbAK70r-3">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="792.5" y="760" as="sourcePoint" />
+            <mxPoint x="1087.5" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-43" value="validate()" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.507;exitY=0.403;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="795.7700000000001" y="860.0000000000001" as="sourcePoint" />
+            <mxPoint x="939.5" y="860.0000000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-44" value="validationResult" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1" target="zZXE5hGUNT9eiSbAK70r-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="940" y="890" as="sourcePoint" />
+            <mxPoint x="860" y="890" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-45" value="validate()" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.504;exitY=0.434;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="zZXE5hGUNT9eiSbAK70r-8" target="zZXE5hGUNT9eiSbAK70r-7">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="800.0000000000001" y="920.0000000000001" as="sourcePoint" />
+            <mxPoint x="943.73" y="920.0000000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-46" value="validationResult" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;exitX=0.494;exitY=0.466;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1087.16" y="959.9999999999999" as="sourcePoint" />
+            <mxPoint x="792.8344680851064" y="959.9999999999999" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-47" value="validate()" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;exitX=0.504;exitY=0.434;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" target="zZXE5hGUNT9eiSbAK70r-3">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="792.5" y="1000" as="sourcePoint" />
+            <mxPoint x="1087.5" y="1000" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-48" value="validationResult" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1249.4999999999998" y="1040" as="sourcePoint" />
+            <mxPoint x="795.1153846153848" y="1040" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-49" value="boolean: isValid" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1" source="zZXE5hGUNT9eiSbAK70r-8" target="zZXE5hGUNT9eiSbAK70r-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="780" y="1099" as="sourcePoint" />
+            <mxPoint x="700" y="1099" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-50" value="build validationResult" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;elbow=vertical;curved=1;" edge="1" parent="1" target="zZXE5hGUNT9eiSbAK70r-2">
+          <mxGeometry x="-0.1775" y="30" width="80" relative="1" as="geometry">
+            <mxPoint x="310" y="1100" as="sourcePoint" />
+            <mxPoint x="390" y="1100" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="310" y="1090" />
+              <mxPoint x="370" y="1090" />
+              <mxPoint x="370" y="1130" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZXE5hGUNT9eiSbAK70r-51" value="validationResult" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1" target="zZXE5hGUNT9eiSbAK70r-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="1160" as="sourcePoint" />
+            <mxPoint x="230" y="1160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
