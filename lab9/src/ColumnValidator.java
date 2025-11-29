@@ -36,6 +36,6 @@ public class ColumnValidator implements Validator{
 
     @Override
     public void performValidation(int index) {
-        validateColumn(index);  // ONE column
+        validateColumn(index);
     }
 }

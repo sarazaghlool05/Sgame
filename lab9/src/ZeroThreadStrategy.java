@@ -2,11 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ZeroThreadStrategy implements VerificationStrategy {
-    private SudokuBoard board;
     private List<Duplicate> allDuplicates;
 
-    public ZeroThreadStrategy(SudokuBoard board) {
-        this.board = board;
+    public ZeroThreadStrategy() {
         this.allDuplicates = new ArrayList<>();
     }
 
