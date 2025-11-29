@@ -3,7 +3,7 @@ import java.util.List;
 
 public class TwentySevenThreadStrategy implements VerificationStrategy{
     private final SudokuBoard board;
-    private final ResultCollect FinalAnswer = new ResultCollect();
+    private final ValidationResult finalResult = new ValidationResult();
 
     public TwentySevenThreadStrategy(SudokuBoard board) {
         this.board = board;
@@ -44,14 +44,14 @@ public class TwentySevenThreadStrategy implements VerificationStrategy{
         }
         for(int i=0 ; i<validators.size();i++){
             Validator v=validators.get(i);
-            FinalAnswer.addDuplicates(v.validate().getDuplicates());
+            finalResult.merge(v.validate());
 
         }
-        return FinalAnswer.combined().isValid();
+        return finalResult.isValid();
     }
     @Override
     public List<Duplicate> returnDuplicates(){
-      return FinalAnswer.combined().getSortedDuplicates();
+        return finalResult.getSortedDuplicates();
     }
 
 }

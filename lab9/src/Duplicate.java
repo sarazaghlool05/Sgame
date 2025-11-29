@@ -9,7 +9,7 @@ public class Duplicate implements Comparable<Duplicate>{
 
     public Duplicate(String type, int index, int value, List<Integer> positions) {
         this.type = type;
-        this.index = index;
+        this.index = index + 1;
         this.value = value;
         this.positions = new ArrayList<>();
         for (int position : positions) {

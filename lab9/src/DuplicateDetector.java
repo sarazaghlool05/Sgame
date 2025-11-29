@@ -19,7 +19,7 @@ public class DuplicateDetector {
 
             if (positions.size() > 1) {
                 int value = entry.getKey();
-                duplicates.add(new Duplicate(type, index + 1, value, positions));
+                duplicates.add(new Duplicate(type, index, value, positions));
             }
         }
         return duplicates;

@@ -1,6 +1,8 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SudokuBoard {
     private final int[][] sudokuGrid = new int [9][9];
@@ -9,17 +11,61 @@ public class SudokuBoard {
         load(filePath);
     }
 
-    private void load(String filePath) throws IOException{
-        try(BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+    private void load(String filePath) throws IOException {
+        List<String> errors = new ArrayList<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             int row = 0;
 
-            while ((line = br.readLine()) != null && row < 9) {
+            while ((line = br.readLine()) != null) {
+                if (line.trim().isEmpty()) {
+                    continue;
+                }
+
+                if (row >= 9) {
+                    errors.add("Board has more than 9 rows");
+                    break;
+                }
+
                 String[] numbers = line.split(",");
+
+                if (numbers.length != 9) {
+                    errors.add("Row " + (row + 1) + " has " + numbers.length +
+                            " columns, expected 9");
+                    row++;
+                    continue;
+                }
+
                 for (int column = 0; column < 9; column++) {
-                    sudokuGrid[row][column] = Integer.parseInt(numbers[column].trim());
+                    try {
+                        int value = Integer.parseInt(numbers[column].trim());
+
+                        if (value < 1 || value > 9) {
+                            errors.add("Invalid value " + value + " at row " + (row + 1) +
+                                    ", column " + (column + 1) + ". Values must be between 1 and 9");
+                        } else {
+                            sudokuGrid[row][column] = value;
+                        }
+
+                    } catch (NumberFormatException e) {
+                        errors.add("Invalid number format '" + numbers[column].trim() +
+                                "' at row " + (row + 1) + ", column " + (column + 1));
+                    }
                 }
                 row++;
+            }
+
+            if (row < 9) {
+                errors.add("Expected 9 rows, found " + row);
+            }
+            
+            if (!errors.isEmpty()) {
+                StringBuilder errorMessage = new StringBuilder("Invalid board format:\n");
+                for (String error : errors) {
+                    errorMessage.append("  - ").append(error).append("\n");
+                }
+                throw new IOException(errorMessage.toString());
             }
         }
     }
