@@ -30,6 +30,7 @@ public class ThreeThreadStrategy implements VerificationStrategy{
             col.join();
             box.join();
         }catch(InterruptedException e){
+            Thread.currentThread().interrupt();
             System.out.println("error in threading");
         }
 
